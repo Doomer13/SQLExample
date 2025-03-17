@@ -2,7 +2,7 @@ package org.example.dto;
 
 public class CountryLanguageDTO {
 
-    String countryCode;
+     String countryCode;
     String language;
     String isOfficial;
     int percentage;

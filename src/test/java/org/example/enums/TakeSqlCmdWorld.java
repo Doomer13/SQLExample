@@ -1,4 +1,4 @@
-package org.example.sqlexample;
+package org.example.enums;
 
 public enum TakeSqlCmdWorld {
     SELECT_CITY_TABLE("SELECT * FROM world.city"),

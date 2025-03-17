@@ -1,7 +1,11 @@
 package org.example.sqlexample;
 
-import org.example.dao.GreatArrayList;
+import org.example.dao.GreatArrayListMyTable;
+import org.example.dao.GreatArrayListSmallTable;
 import org.example.dto.CountryLanguageDTO;
+import org.example.enums.InsertSqlRequest;
+import org.example.enums.TakeSqlCmdWorld;
+import org.example.insert.Insert;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -15,15 +19,24 @@ public class Main {
     private static final String PASS = "rootZiderman";
 
     DatabaseUtil dbUtil = new DatabaseUtil();
-    InsertForSmallLanguageTable ins = new InsertForSmallLanguageTable();
+    Insert ins = new Insert();
 
-    GreatArrayList arrayListUnionTable = new GreatArrayList(TakeSqlCmdWorld.UNION_TABLE);
-    GreatArrayList arrayListLikeTable = new GreatArrayList(TakeSqlCmdWorld.USE_LIKE_METHOD);
+    GreatArrayListSmallTable arrayListUnionTable = new GreatArrayListSmallTable(TakeSqlCmdWorld.UNION_TABLE);
+    GreatArrayListSmallTable arrayListLikeTable = new GreatArrayListSmallTable(TakeSqlCmdWorld.USE_LIKE_METHOD);
+
+    GreatArrayListMyTable arrayListMyTable = new GreatArrayListMyTable(TakeSqlCmdWorld.SELECT_MY_TABLE);
+
+    @Test
+    public void optMyTable() throws SQLException {
+        ins.insertingMyTable(arrayListMyTable);
+
+    }
+
 
 
     @Test
-    public void opt() throws SQLException {
-        ins.insertingMethod(arrayListLikeTable);
+    public void optSmallTable() throws SQLException {
+        ins.insertingMethodSmallTable(arrayListLikeTable);
 
     }
 

@@ -2,13 +2,13 @@ package org.example.dao;
 
 import org.example.dto.CountryLanguageDTO;
 import org.example.sqlexample.DatabaseUtil;
-import org.example.sqlexample.TakeSqlCmdWorld;
+import org.example.enums.TakeSqlCmdWorld;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class GreatArrayList {
+public class GreatArrayListSmallTable {
 
     private final TakeSqlCmdWorld sql;
 
@@ -17,7 +17,7 @@ public class GreatArrayList {
     DatabaseUtil data = new DatabaseUtil();
 
     // Конструктор принимает нужный enum
-    public GreatArrayList(TakeSqlCmdWorld sql) {
+    public GreatArrayListSmallTable(TakeSqlCmdWorld sql) {
         this.sql = sql;
     }
 
